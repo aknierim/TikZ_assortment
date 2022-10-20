@@ -1,0 +1,26 @@
+\input{../tikz-header.tex}
+
+\begin{document}
+\begin{tikzpicture}
+    \coordinate (particle_pos) at (5,0);
+
+    \draw[->, >=stealth, dashed] (-1,0) -- (6,0) coordinate (part_axis);
+    \draw (particle_pos) -- (1,2.3);
+    \draw (particle_pos) -- (1,-2.3);
+    \fill (particle_pos) circle [radius=0.05];
+
+    \foreach \x\y in {3.2/1.8, 3.4/1.6, 3.6/1.4, 3.8/1.2, 4.0/1.0, 4.2/0.8, 4.4/0.6, 4.6/0.4, 4.8/0.2}
+        {
+
+            \draw[->, >=stealth] ({\x-\y*sin(30.434)},{\y*cos(30.434)}) -- ++(0.45,0.8);
+            \draw[->, >=stealth] ({\x-\y*sin(30.434)},-{\y*cos(30.434)}) -- ++(0.45,-0.8);
+            \draw[blue, opacity=0.75, densely dotted] ({\x-1.165*\y*cos(30.434)}, 0) circle [radius=\y];
+        }
+    \draw ({3.6-1.165*1.4*cos(30.434)}, 0) coordinate (theta_origin) -- ({3.6-1.4*sin(30.434)},{1.4*cos(30.434)}) coordinate(theta_axis);
+    \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = part_axis--theta_origin--theta_axis};
+
+    \node [below] at (3.5,0) {\footnotesize$\beta\symup{c}t$};
+    \node [left] at (2.6,0.75) {\footnotesize$\frac{\symup{c}}{n}t$};
+
+\end{tikzpicture}
+\end{document}

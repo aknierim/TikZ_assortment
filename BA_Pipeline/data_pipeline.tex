@@ -1,0 +1,45 @@
+\input{../tikz-header.tex}
+\setmainfont{Fira Sans}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.750, every node/.style={scale=0.6}]
+    \node [draw, circle, minimum size=1, align=center] (A) at (0,0) {Simulation\\Data};
+    \node [draw, align=center] (sim_data) at (0,-1.5) {\texttt{simtel},\\DL0 or DL1};
+    \draw [to path={-- (\tikztotarget)}] (sim_data) edge (A);
+
+    \fill [rounded corners, color=tulightgreen, fill opacity=0.7] (1.5,3) rectangle (7.5, -3);
+    \node at (4.5,1.74) [above] {\texttt{<ctapipe\_logo>}};
+    \node at (4.5,1.74) {\texttt{v0.15.1}};
+
+    \node [draw, circle, minimum size=1, align=center] (B) at (3,0) {\texttt{ctapipe-process}\\\&\\\texttt{ctapipe-merge}};
+    \draw [->, >=latex, to path={-- (\tikztotarget)}] (A) edge (B);
+
+    \node [above] at (4.5,-2) {Run with python scripts and configs};
+    \node [draw, align=left] (BC) at (4.5,-2.5) {\texttt{cleaner\_config.yml}\\\texttt{prod5b\_lapalma\_alpha.yml}};
+
+    \node [draw, circle, minimum size=1, align=center] (C) at (6,0) {Re-Run for\\parameter\\combinations};
+    \draw [->, >=latex, to path={-- (\tikztotarget)}] (B) edge (C);
+
+    \fill [rounded corners, color=tublue, fill opacity=0.3] (7.7,3) rectangle (19, -3);
+    \node [draw, circle, minimum size=1, align=center] (D) at (9,0) {Processing\\of\\Array- or\\Telescope-\\Level Data};
+    \draw [->, >=latex, to path={-- (\tikztotarget)}] (C) edge (D);
+
+    \node [draw, circle, minimum size=1] (E1) at (12,2) {DL1 Plots};
+    \node [draw, circle, minimum size=1, align=center] (E2) at (12,0) {Angular\\Resolution\\\&\\Separation};
+    \node [draw, circle, minimum size=1] (E3) at (12,-2) {Metrics};
+
+    \draw [->, >=latex, to path={|- (\tikztotarget)}] (D) edge (E1);
+    \draw [->, >=latex, to path={-- (\tikztotarget)}] (D) edge (E2);
+    \draw [->, >=latex, to path={|- (\tikztotarget)}] (D) edge (E3);
+
+    \node [draw, circle, minimum size=1, align=center] (F) at (15,0) {Efficiency/\\Effective\\Area};
+    \draw [->, >=latex, to path={-- (\tikztotarget)}] (E2) edge (F);
+
+    \node [draw, circle, minimum size=1, align=center] (G) at (18,0) {Results/\\Plots};
+    \draw [->, >=latex, to path={-- (\tikztotarget)}] (F) edge (G);
+
+    \coordinate (FG) at (16.5,0) {};
+    \draw [to path={-| (\tikztotarget)}] (E1) to (FG);
+    \draw [to path={-| (\tikztotarget)}] (E3) to (FG);
+\end{tikzpicture}
+\end{document}

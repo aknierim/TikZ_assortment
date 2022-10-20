@@ -1,0 +1,135 @@
+\input{../tikz-header.tex}
+\usetikzlibrary{shapes.geometric}
+
+
+\tikzset{
+    position label/.style={
+       below = 3pt,
+       text height = 1.5ex,
+       text depth = 1ex
+    },
+    brace/.style={
+     decoration={brace},
+     decorate
+   }
+}
+
+\begin{document}
+    % first hexagon
+    \begin{tikzpicture}
+        \newdimen\R
+        \R=2.7cm
+
+        \node[circle, inner sep=0.1cm, fill, draw] (A) at (0:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (B) at (60:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (C) at (120:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (D) at (180:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (E) at (240:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (F) at (300:\R) {};
+        \draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
+
+        \draw[->, >=latex, red, thick] (D) -- node[midway, above] {$\vec{a}_{1}$} (B);
+        \draw[->, >=latex, red, thick] (D) -- node[midway, below] {$\vec{a}_{1}$} (F);
+    \end{tikzpicture}
+
+    % second hexagon
+    \begin{tikzpicture}
+        \newdimen\R
+        \R=2.7cm
+
+        % origin
+        \coordinate (O) at (0,0);
+        \coordinate (CD) at (C |- D);
+        \coordinate (AP1) at ($(CD) + (0.1cm,0)$); % Angle point
+        \coordinate (AP2) at ($(CD) + (0,0.1cm)$); % Angle point
+
+
+        \node[circle, inner sep=0.1cm, fill, draw] (A) at (0:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (B) at (60:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (C) at (120:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (D) at (180:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (E) at (240:\R) {};
+        \node[circle, inner sep=0.1cm, fill, draw] (F) at (300:\R) {};
+        \draw[thick] (A) -- (B) -- (C) -- node[midway, left] {$a$} (D) -- (E) -- (F) -- (A);
+
+        \draw[thick] (D) -- (C |- D);
+        \draw[thick] (C) -- node[midway, right] {$h$} (C |- D);
+
+        \draw[thick] (D) -- (0,0);
+
+        \draw[thick] (C) -- node[midway, right] {$a$} (O);
+
+        \draw [brace, decoration={raise=0.1cm}] (D) -- node[midway, above, yshift=0.1cm] {$a\,/\,2$} (CD);
+        \draw [brace, decoration={mirror, raise=0.1cm}] (D) -- node[position label, yshift=-0.1cm] {$a$} (O.south);
+
+        \draw pic["\large$\cdot$", draw] {angle=AP1--CD--AP2};
+
+    \end{tikzpicture}
+
+    % third hexagon
+    \begin{tikzpicture}
+        \newdimen\R
+        \R=2.7cm
+
+        \newdimen\ArrowLength
+        \ArrowLength=4.05cm
+
+        % origin
+        \coordinate (O) at (0,0);
+        \coordinate (CD) at (C |- D);
+        \coordinate (OAR) at ($(0:\R) + (-0.34cm,0)$); % Angle origin
+        \coordinate (shiftedO) at ($(O) + (0.05cm,0)$); % Angle point
+        % \coordinate (brillouin) at (45:\R); % Angle point
+        \coordinate (axesOrigin) at (150:\ArrowLength+1.5cm); % Angle point
+
+
+        % hexagon
+        \coordinate (A) at (30:\R);
+        \coordinate (B) at (90:\R);
+        \coordinate (C) at (150:\R);
+        \coordinate (D) at (210:\R);
+        \coordinate (E) at (270:\R);
+        \coordinate (F) at (330:\R);
+        \draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
+
+        % arrows and dashed lines
+        \draw[->, >=latex, thick] (O) -- (60:\ArrowLength) node[right] {$\vec{b}_{1}$};
+        \draw[->, >=latex, thick] (O) -- (300:\ArrowLength) node[right] {$\vec{b}_{2}$};
+        \draw[thick, dashed] (O) -- (120:\ArrowLength);
+        \draw[thick, dashed] (O) -- (240:\ArrowLength);
+        \draw[thick, dashed] (180:\ArrowLength) -- (0:\ArrowLength);
+        \draw[thick, dashed] (O) -- (A);
+
+        % dots
+        \node [circle, inner sep=0.03cm, fill, draw] at (O) {};
+        \node [circle, inner sep=0.03cm, fill, draw] at (180:\ArrowLength) {};
+        \node [circle, inner sep=0.03cm, fill, draw] at (0:\ArrowLength) {};
+        \node [circle, inner sep=0.03cm, fill, draw] at (120:\ArrowLength) {};
+        \node [circle, inner sep=0.03cm, fill, draw] at (240:\ArrowLength) {};
+
+        % angles
+        \draw pic["\large$\cdot$", draw] {angle=A--OAR--O};
+        \draw pic[draw] {angle=OAR--O--A} node[above right, xshift=0.4cm, yshift=-0.075cm] {$\varphi$};
+
+        % braces
+        \draw [brace, decoration={raise=0.05cm}] (A) -- node[position label, above, xshift=0.33cm, yshift=-0.26cm] {$x$} (OAR);
+        \draw [brace, decoration={mirror, raise=0.05cm}] (shiftedO) -- node[position label, yshift=-0.05cm] {$\frac{2\symup{\pi}}{3a}$} (OAR.south);
+
+        % annotations
+        \path[every node/.style={font=\sffamily\small}, ->, >=latex] (26:\ArrowLength) edge[bend right] (A);
+        \path[every node/.style={font=\sffamily\small}, ->, >=latex] (336:\ArrowLength) edge[bend left] (F);
+        \node [right] at (26:\ArrowLength) {Dirac-Punkt $k_{1}$};
+        \node [right] at (336:\ArrowLength) {Dirac-Punkt $k_{2}$};
+        % \path[every node/.style={font=\sffamily\small}, ->, >=latex] (43:\ArrowLength) edge[bend right] (brillouin);
+        % \node [right] at (43:\ArrowLength) {1. Brillouin-Zone};
+
+        % phi
+        \node [] at (0:\ArrowLength+2cm) {$\varphi = \SI{30}{\degree}$};
+
+        % axes, relative to axesOrigin coordinate
+        \draw[->, >=latex] (axesOrigin) -- ++(1cm,0cm) node[right] {$x$};
+        \draw[->, >=latex] (axesOrigin) -- ++(0cm,1cm) node[above] {$y$};
+
+
+    \end{tikzpicture}
+\end{document}

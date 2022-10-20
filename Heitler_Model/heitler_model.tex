@@ -1,0 +1,17 @@
+\input{../tikz-header.tex}
+
+\begin{document}
+
+\feynmandiagram [small, vertical=a to b, tree layout, xscale=0.5, scale=1.2]  {
+    a [particle=\(\gamma\)] -- [photon] b,
+    c [] -- [fermion, edge label=\(e^{+}\)] b -- [fermion, edge label=\(e^{-}\),] d,
+
+    c1 -- [fermion, edge label=\(e^{+}\)] c -- [photon, edge label=\(\gamma\)] c2,
+    d1 -- [photon, photon, edge label=\(\gamma\)] d -- [fermion, edge label=\(e^{-}\)] d2,
+
+    c11 [particle=\(e^{+}\)] -- [fermion] c1 -- [photon] c12 [particle=\(\gamma\)],
+    d11 [particle=\(e^{+}\)]  -- [fermion] d1 -- [fermion] d12 [particle=\(e^{-}\)],
+    c21 [particle=\(e^{+}\)] -- [fermion] c2 -- [fermion] c22 [particle=\(e^{-}\)],
+    d21 [particle=\(\gamma\)]  -- [photon] d2 -- [fermion] d22 [particle=\(e^{-}\)],
+};
+\end{document}

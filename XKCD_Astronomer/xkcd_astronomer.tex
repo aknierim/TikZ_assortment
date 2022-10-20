@@ -1,0 +1,45 @@
+\input{../tikz-header.tex}
+
+\setmainfont{Fira Sans}
+
+% colours
+\colorlet{maincolour}{darkgray}
+
+\tikzstyle{limb}=[thick,line cap=round]
+
+% scaling params
+\def\W{5.2}
+\def\T{0.08}
+\def\H{2.2}
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}
+  \draw[opacity=0] (0,0) rectangle (2.5,3.5);
+  \def\x{-0.1*\W} % human position
+
+  % PERSON (from https://tikz.net/dynamics_plank_ice/ by Izaak Neutelings)
+  \draw[maincolour, thick] (\x,\H) circle(0.3) coordinate (H);
+  \draw[maincolour, thick] (H)++(-90:0.3) coordinate (N) to[out=-92,in=92]++ (0,-0.40*\H) coordinate (P);
+  \draw[maincolour, limb] (N)++(-95:0.03) to[out=-105,in=90]++ (-0.02*\W,-0.4*\H);
+  \draw[maincolour, limb] (N)++(-85:0.03) to[out=-80,in=90]++ (0.02*\W,-0.4*\H);
+  \draw[maincolour, limb] (P) to[out=-92,in=82] (\x-0.02*\W,\T);
+  \draw[maincolour, limb] (P) to[out=-80,in=90] (\x+0.02*\W,\T);
+
+  % TELESCOPE
+  \begin{scope}[transform canvas={scale=0.9}]
+  \draw[maincolour, fill, rounded corners, rotate around={60:(2.5,1.5)}, yshift=2.5cm, yscale=0.5] (1,1) rectangle (4,2);
+  \draw[maincolour, fill, rotate around={60:(2.5,1.5)}, yshift=2.5cm, yscale=0.5] (1.5,1) rectangle (4,2);
+  \draw[maincolour, line width=1mm] (1, 2) circle(0.3);
+  \draw[maincolour, thick, limb, line width=0.5mm] (0.5,0) -- (1.2,1.8);
+  \draw[maincolour, thick, limb, line width=0.5mm] (1.2,0) -- (1.2,1.8);
+  \draw[maincolour, thick, limb, line width=0.5mm] (1.9,0) -- (1.2,1.8);
+  \draw[maincolour, fill, rotate around={150:(0.25,1.575)}] (0.1,1.5) rectangle (0.4,1.65);
+  \end{scope}
+
+\end{tikzpicture}
+
+\end{document}
