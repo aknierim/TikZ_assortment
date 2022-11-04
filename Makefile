@@ -1,4 +1,5 @@
-DIRS := BA_Pipeline/ Cherenkov_Radiation/ Heitler_Model/ Brillouin_Hexagons/ XKCD_Astronomer/
+DIRS := BA_Pipeline/ Brillouin_Hexagons/ Cherenkov_Radiation/ Dulong_Petit_dewar/ falling_sphere_viscometer/
+DIRS += Feynman_diagrams/ Fraunhofer_diffraction_graph/ Heitler_Model/ timer_circuit/ XKCD_Astronomer/
 
 
 all:

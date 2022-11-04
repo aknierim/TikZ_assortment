@@ -1,0 +1,428 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+Latexmk: applying rule 'lualatex'...
+Rule 'lualatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  build/iact_dark.aux
+  iact_dark.tex
+   No-longer-existing files:
+  ../XKCD_Astronomer/xkcd_astronomer_light.tex
+Rule 'lualatex': The following rules & subrules became out-of-date:
+  lualatex
+------------
+Run number 1 of rule 'lualatex'
+------------
+------------
+Running 'lualatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "iact_dark.tex"'
+------------
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022) 
+ restricted system commands enabled.
+(/home/aknierim/BA/TikZ_assortment/IACT/iact_dark.tex
+LaTeX2e <2022-06-01> patch level 5
+ L3 programming layer <2022-07-04> (../tikz-header.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/standalone/standalone.
+cls
+Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
+dalone
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tools/shellesc.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/iftex/ifluatex.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/xkeyval/keyval.tex))
+))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/standalone/standalone.
+cfg) (/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/luatex85/luatex85.st
+y)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmd
+s.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.
+sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xpar
+se.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-lu
+atex.def)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec-luat
+ex.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz
+.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.s
+ty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfuti
+l-common.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfuti
+l-common-lists.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfuti
+l-latex.def)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs
+.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex
+)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore
+.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.
+cfg)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics-def/luatex.de
+f)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys
+.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkey
+s.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkey
+sfiltered.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.
+cfg)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys-luatex.def
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys-common-pdf.def)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+yssoftpath.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ysprotocol.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx
+))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+re.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.cod
+e.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc
+.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil
+.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathpars
+er.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.basic.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.trigonometric.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.random.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.comparison.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.base.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.round.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.misc.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.integerarithmetics.code.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloa
+t.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code
+.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repoints.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repathconstruct.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repathusage.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+rescopes.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+regraphicstate.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+retransformations.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+requick.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reobjects.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repathprocessing.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+rearrows.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reshade.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reimage.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reexternal.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+relayers.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+retransparency.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repatterns.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+rerdf.code.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodul
+eshapes.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodul
+eplot.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfc
+omp-version-0-65.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfc
+omp-version-1-18.sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.s
+ty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.
+sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkey
+s.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.cod
+e.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor
+.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.cod
+e.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/tikz.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryplothandlers.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodul
+ematrix.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarytopaths.code.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarycalc.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarypatterns.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflib
+rarypatterns.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryquotes.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tikzmark/tikzlibraryti
+kzmark.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3
+keys2e.sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryangles.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarydecorations.pathreplacing.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarydecorations.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodul
+edecorations.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decora
+tions/pgflibrarydecorations.pathreplacing.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryfadings.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryfadings.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.re
+vision.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.co
+de.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotscor
+e.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/sys/pgfplot
+ssysgeneric.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/pgfplo
+tslibrary.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/oldpgfcompa
+tib/pgfplotsoldpgfsupp_loader.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryfpu.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/luamat
+h/pgflibraryluamath.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplo
+tsutil.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructu
+re/pgfplotsliststructure.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructu
+re/pgfplotsliststructureext.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructu
+re/pgfplotsarray.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructu
+re/pgfplotsmatrix.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/numtable/pg
+fplotstableshared.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/liststructu
+re/pgfplotsdeque.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplo
+tsbinary.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplo
+tsbinary.data.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplo
+tsutil.verb.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/pgflib
+rarypgfplots.surfshading.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/sys/pgflibr
+arypgfplots.surfshading.pgfsys-luatex.def)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplo
+tscolormap.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/util/pgfplo
+tscolor.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotssta
+ckedplots.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsplo
+thandlers.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsmes
+hplothandler.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotsmes
+hplotimage.code.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.sc
+aling.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotscoo
+rdprocessing.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.er
+rorbars.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.ma
+rkers.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplotstic
+ks.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/pgfplots.pa
+ths.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decora
+tions/pgflibrarydecorations.pathmorphing.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgfplots/libs/tikzli
+brarypgfplots.contourlua.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryplotmarks.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryplotmarks.code.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tikz-feynman/tikz-feyn
+man.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tikz-feynman/tikzlibra
+ryfeynman.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryarrows.meta.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarydecorations.markings.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decora
+tions/pgflibrarydecorations.markings.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/graphs/tikzlibrarygraphs.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarypositioning.code.tex)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryshapes.geometric.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/shapes
+/pgflibraryshapes.geometric.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/graphdrawing/tex
+/tikzlibrarygraphdrawing.code.tex
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/pgf/graphdrawing/tex
+/pgflibrarygraphdrawing.code.tex))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tikz-feynman/tikzfeynm
+an.keys.code.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.st
+y (/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/mathtools/mhsetup.sty)
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/l3packages/xfrac/xfrac
+.sty (/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/l3packages/xtemplate/x
+template.sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/unicode-math/unicode-m
+ath.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/unicode-math/unicode-m
+ath-luatex.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/base/fix-cm.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/base/ts1enc.def))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/lualatex/lualatex-math/luala
+tex-math.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/unicode-math/unicode-m
+ath-table.tex)))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/translations/translati
+ons.sty)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/tools/array.sty))
+
+Package siunitx Warning: Option "math-micro" has been removed in this release.
+
+
+Package siunitx Warning: Option "text-micro" has been removed in this release.
+
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/pagecolor/pagecolor.st
+y
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.st
+y
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.
+sty))
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/generic/iftex/ifpdf.sty))
+(/home/aknierim/BA/TikZ_assortment/IACT/build/iact_dark.aux)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-
+base.sty
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-s
+ys.cfg))
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
+your preamble.
+ on input line 19.
+
+
+Package tikz-feynman Warning: Consider loading TikZ-Feynman with \usepackage[co
+mpat=1.1.0]{tikz-feynman} so that you can be warned if TikZ-Feynman changes. on
+ input line 19.
+
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/home/aknierim/.local/texlive/2022/texmf-dist/tex/latex/translations/translati
+ons-basic-dictionary-english.trsl)
+(/home/aknierim/BA/TikZ_assortment/IACT/xkcd_astronomer_light.tex)
+
+LaTeX Warning: File `build/tikz/cherenkov_radiation_dark.pdf' not found on inpu
+t line 43.
+
+
+! Package luatex.def Error: File `build/tikz/cherenkov_radiation_dark.pdf' not 
+found: using draft setting.
+
+See the luatex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.43 ...cm]{build/tikz/cherenkov_radiation_dark.pdf}
+                                                  };
+ 6306 words of node memory still in use:
+   54 hlist, 1 vlist, 12 rule, 5 dir, 179 glue, 4 kern, 1 glyph, 651 attribute,
+ 58 glue_spec, 651 attribute_list, 4 temp, 7 if_stack, 1 write, 407 pdf_literal
+, 48 pdf_colorstack nodes
+   avail lists: 1:9,2:31,3:1,4:2,5:135,7:12,9:10
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on iact_dark.log.
+Latexmk: Getting log file 'build/iact_dark.log'
+Latexmk: Examining 'build/iact_dark.fls'
+Latexmk: Examining 'build/iact_dark.log'
+Latexmk: Errors, so I did not complete making targets
+Collected error summary (may duplicate other messages):
+  lualatex: Command for 'lualatex' gave return code 1
+      Refer to 'build/iact_dark.log' for details

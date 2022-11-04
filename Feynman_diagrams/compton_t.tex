@@ -1,0 +1,9 @@
+\input{../tikz-header.tex}
+
+\begin{document}
+\feynmandiagram[vertical'=a to b] {
+    i1 [particle=\(\symup{e}^{-}\)] -- [fermion] a-- [photon] f1 [particle=\(\ugamma\)],
+    a -- [fermion, edge label=\(\symup{e}^{-}\)] b,
+    i2 [particle=\(\ugamma\)]-- [photon] b-- [fermion] f2 [particle=\(\symup{e}^{-}\)],
+    };
+\end{document}

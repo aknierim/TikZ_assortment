@@ -1,0 +1,37 @@
+\input{../tikz-header.tex}
+
+\begin{document}
+  \begin{tikzpicture}[scale=.5, transform shape]
+    \draw [<-, >=stealth] (0, 0) node[below, yshift=-.1cm, align=center] {zur\\Photodiode} -- (2, 0);
+    \draw (2, -.5) rectangle (4, .5);
+    \draw (2, -.5) -- (4, .5);
+    \node [above] at (2.5, 0) {$\sim$};
+    \draw (3.3, -.3) -- (3.4, -.3) -- (3.4, .05) -- (3.6, .05) -- (3.6, -.3) -- (3.7, -.3);
+
+    \draw (4, 0) -- (6, 0) node[above left] {T};
+    \draw (6, -1) rectangle (8, 1);
+    \draw [dashed] (6, 0) -- (8, 0);
+    \draw (7, -1) -- (7, -1.5) node[below, yshift=-.1cm, align=center] {$\bar{\text{S}}$\\\textbf{Flip-Flop}};;
+    \draw [fill] (6.95, -1.55) rectangle (7.05, -1.45);
+    \draw (7, 1) -- (7, 1.5) node[above, yshift=.1cm, align=center] {$\bar{\text{R}}$};;
+    \draw [fill] (6.95, 1.55) rectangle (7.05, 1.45);
+    \draw [->, >=stealth] (8, .5) node[above right] {Q} -- (21, .5) node[right, align=left] {zum Eingang\\"Start-/ Stoppsignal"};
+    \draw (8, -.5) node[below right] {$\bar{\text{Q}}$} -| (10, -3) -- (11, -3) node[above left] {T};
+
+    \draw (11, -4) rectangle (13, -2);
+    \draw [dashed] (11, -3) -- (13, -3);
+    \draw (12, -4) -- (12, -4.5) node[below, yshift=-.1cm, align=center] {$\bar{\text{S}}$\\\textbf{Flip-Flop}};;
+    \draw [fill] (11.95, -4.55) rectangle (12.05, -4.45);
+    \draw (12, -2) -- (12, -1.5) node[above, yshift=.1cm, align=center] {$\bar{\text{R}}$};;
+    \draw [fill] (11.95, -1.55) rectangle (12.05, -1.45);
+    \draw (13, -3.5) node[below right] {Q} -- (14, -3.5);
+    \draw (13, -2.5) node[above right] {$\bar{\text{Q}}$} -- (16, -2.5) node[above left] {T};
+
+    \draw (16, -3.5) rectangle (18, -1.5);
+    \draw [dashed] (16, -2.5) -- (18, -2.5);
+    \draw [->, >=stealth, thick] (17, -3) -- (17, -2);
+    \node [below, yshift=-.1cm] at (17, -3.5) {\textbf{Univibrator}};
+    \draw [->, >=stealth] (18, -2) node[above right] {$\bar{\text{Q}}$} -- (21, -2) node[right, align=left] {zum Eingang\\"Rückstellung"};
+    \draw (18, -3) node[below right] {Q} -- (19, -3);
+  \end{tikzpicture}
+\end{document}
