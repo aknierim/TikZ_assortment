@@ -1,0 +1,9 @@
+\input{../tikz-header.tex}
+
+\begin{document}
+\feynmandiagram[horizontal=f2 to f3] {
+    f1 [particle=\(\ugamma\)] -- [photon] f2 -- [fermion, edge label=\(\symup{e}^{-}\)] f3 -- [photon] f4 [particle=\(\ugamma\)],
+    f2 -- [anti fermion] p1 [particle=\(\symup{e}^{-}\)],
+    f3 -- [fermion] p2 [particle=\(\symup{e}^{-}\)],
+    };
+\end{document}

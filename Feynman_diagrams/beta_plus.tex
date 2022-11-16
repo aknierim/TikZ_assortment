@@ -1,0 +1,10 @@
+\input{../tikz-header.tex}
+
+\begin{document}
+\feynmandiagram[layered layout, horizontal=a to b]
+    {a [particle=\small$\symup{p}$] -- [fermion] b -- [fermion] f1 [particle=\small$\symup{n}$],
+    b -- [boson,edge label'=\small$\symup{W}^{+}$] c,
+    c -- [fermion] f2 [particle=\small$\symup{\nu}_{\symup{e}}$],
+    c -- [anti fermion] f3 [particle=\small$\ubeta^{+}$],
+    };
+\end{document}

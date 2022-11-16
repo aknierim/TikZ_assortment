@@ -8,7 +8,7 @@ TeXOptions = -lualatex \
 			 -output-directory=build
 
 
-all: hexagons.pdf hexagons_en.pdf
+all: hexagons.pdf # hexagons_en.pdf
 
 
 hexagons.pdf: FORCE | build

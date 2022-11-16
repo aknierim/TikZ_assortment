@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Categories
 SSP := SolidStatePhysics
 
