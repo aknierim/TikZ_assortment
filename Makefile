@@ -1,4 +1,8 @@
-DIRS := BA_Pipeline/ Cherenkov_Radiation/ Heitler_Model/ Brillouin_Hexagons/ XKCD_Astronomer/
+# Categories
+SSP := SolidStatePhysics
+
+# Directories
+DIRS := BA_Pipeline/ Cherenkov_Radiation/ Heitler_Model/ $(SSP)/Brillouin_Hexagons/ XKCD_Astronomer/
 
 
 all:
