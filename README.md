@@ -21,4 +21,4 @@ Either compile all the files at once by calling
 ```
 make
 ```
-in the root directory of this repository, or compile each graphic individually by calling `make` inside the respective directory.
+in the root directory of this repository, or compile each graphic individually by calling `make` inside the respective directory (you can also call `make -C <DIR>` from the root directory).
