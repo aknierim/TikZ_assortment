@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Categories
 SSP := SolidStatePhysics
 
@@ -6,10 +5,9 @@ SSP := SolidStatePhysics
 DIRS := BA_Pipeline/ Cherenkov_Radiation/ Heitler_Model/ $(SSP)/Brillouin_Hexagons/ XKCD_Astronomer/
 
 
-all:
-	$(foreach dir, $(DIRS), $(MAKE) -C $(dir) && ) true
+all clean: $(DIRS)
 
-clean:
-	$(foreach dir, $(DIRS), $(MAKE) -C $(dir) clean && ) true
+$(DIRS)::
+	$(MAKE) -C $@ $(MAKECMDGOALS)
 
 .PHONY: all clean

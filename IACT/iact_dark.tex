@@ -18,6 +18,7 @@
 
 \begin{document}
   \begin{tikzpicture}
+    \pagecolor{darkmode}
     \clip (-6,0) rectangle (13,9);
 
     \pgfmathsetmacro{\y}{-0.15}
@@ -33,14 +34,14 @@
     \draw[maincolour!40!transparent] (-7, 0.8) -- (14, 0.8);
 
 
-    \node[xshift=\globalshift+1cm] at (8,2.3) {\input{xkcd_astronomer_light.tex}};
+    \node[xshift=\globalshift+1cm] at (8,2.3) {\reflectbox{\includegraphics[height=0.5cm]{subgraphics/xkcd_dark.pdf}}};
 
     % CHERENKOV LIGHT POOL
     \fill[opacity=0.7, path fading=fade30, left color=cherenkov_blue, right color=cherenkov_blue, xshift=\globalshift] (0,8) -- (3,0) -- (9,0) -- cycle;
 
 
     % CHERENKOV RADIATION
-    \node [] at (-2.3, 6) {\includegraphics[height=5.7cm]{build/tikz/cherenkov_radiation_dark.pdf}};
+    \node [] at (-2.3, 6) {\includegraphics[height=5.7cm]{subgraphics/cherenkov_radiation_dark.pdf}};
 
 
     % INITIAL GAMMA
@@ -50,12 +51,12 @@
     \fill[opacity=1, path fading=fadeEAS, left color=yellow, right color=yellow, xshift=\globalshift] (0,8) -- (1,6) arc(30:200:-0.35) -- cycle;
 
     % HEITLER MODEL
-      \node [] at (-2.3, 6) {\includegraphics[height=5.7cm]{build/tikz/heitler_model_dark.pdf}};
+      \node [] at (-2.3, 6) {\includegraphics[height=5.7cm]{subgraphics/heitler_model_dark.pdf}};
 
 
-    % TELESCOPES
-    \node[inner sep=15pt, xshift=\globalshift] at (6,1.3){\reflectbox{\includegraphics[height=2.5cm]{graphics/contours_mst_light.pdf}}};
-    \node[inner sep=15pt, xshift=\globalshift] at (4,1.3){\reflectbox{\includegraphics[height=2.5cm]{graphics/contours_mst_light.pdf}}};
+    % TELESCOPES; Image Credits: Kai Brügge
+    \node[inner sep=15pt, xshift=\globalshift] at (6,1.3){\reflectbox{\includegraphics[height=2.5cm]{subgraphics/contours_mst_light.pdf}}};
+    \node[inner sep=15pt, xshift=\globalshift] at (4,1.3){\reflectbox{\includegraphics[height=2.5cm]{subgraphics/contours_mst_light.pdf}}};
 
     % DESCRIPTIONS
     \path[maincolour, every node/.style={font=\sffamily\small}, ->, >=latex, xshift=\globalshift] (5,5) edge[bend right] node [left] {} (4,4.445);
@@ -67,7 +68,7 @@
 
     % CAMERA FRAME
     \node [circle, draw, color=maincolour, fill=darkmode, minimum width = 4cm, path picture = {
-      \node [] at (path picture bounding box.center) {\includegraphics[height=4.4cm]{graphics/mst_camera_frame.pdf}};
+      \node [] at (path picture bounding box.center) {\includegraphics[height=4.4cm]{subgraphics/mst_camera_frame.pdf}};
       }, xshift=\globalshift] (CAMERAFRAME) at (-3,3.5) {};
 
     \node [above, yshift=2.1cm] at (CAMERAFRAME) {\large Snapshot in camera frame};

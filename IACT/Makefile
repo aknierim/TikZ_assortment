@@ -15,6 +15,9 @@ iact_dark.pdf: FORCE | build
 	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) iact_dark.tex 1> build/log || cat build/log
 	mv build/iact_dark.pdf $@
 
+preview: FORCE | build
+	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) -pvc iact_dark.tex 
+
 FORCE:
 
 build:

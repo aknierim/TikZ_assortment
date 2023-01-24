@@ -12,8 +12,8 @@ all: xkcd_astronomer.pdf
 
 
 xkcd_astronomer.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) xkcd_astronomer.tex 1> build/log || cat build/log
-	mv build/xkcd_astronomer.pdf $@
+	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) xkcd_astronomer_dark.tex 1> build/log || cat build/log
+	mv build/xkcd_astronomer_dark.pdf $@
 
 FORCE:
 
