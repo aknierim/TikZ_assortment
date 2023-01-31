@@ -1,0 +1,74 @@
+\documentclass{standalone}
+
+\usepackage{xparse}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyqr}
+\usepackage{graphicx}
+
+
+% initialize new commands
+\newcommand\theqrurl{}
+\newcommand\theqrheight{}
+\newcommand\theleftcolor{}
+\newcommand\therightcolor{}
+\newcommand\thegradientangle{}
+\newcommand\theqrimage{}
+\newcommand\theimageheight{}
+\newcommand\theimagepadding{}
+
+% new commands for QR code properties
+\newcommand\qrurl[1]{\renewcommand\theqrurl{#1}}
+\newcommand\qrheight[1]{\renewcommand\theqrheight{#1}}
+\newcommand\leftcolor[1]{\renewcommand\theleftcolor{#1}}
+\newcommand\rightcolor[1]{\renewcommand\therightcolor{#1}}
+\ExplSyntaxOn
+\newcommand\gradientangle[1]{\renewcommand\thegradientangle{%
+    \tl_if_empty:nTF {#1} {135} {#1}
+  }
+}
+\ExplSyntaxOff
+\newcommand\imageheight[1]{\renewcommand\theimageheight{#1}}
+\ExplSyntaxOn
+\newcommand\qrimage[1]{\renewcommand\theqrimage{%
+    \tl_if_empty:nTF {#1} {\empty} {\includegraphics[height=\theimageheight]{#1}}
+  }
+}
+\ExplSyntaxOff
+\ExplSyntaxOn
+\newcommand\imagepadding[1]{\renewcommand\theimagepadding{%
+    \tl_if_empty:nTF {#1} {0} {#1}
+  }
+}
+\ExplSyntaxOff
+
+
+%% =================================
+%% Change properties of QR code here
+\qrurl{https://github.com/aknierim/shk_graphics/}     % URL or text for QR code
+\qrheight{3cm}                                        % Height of the QR code
+
+\leftcolor{black}                                     % Left color (for color gradient)
+\rightcolor{black}                                    % Right color (for color gradient)
+\gradientangle{}                                      % Gradient angle
+
+\imageheight{0.5cm}                                   % Image height
+\qrimage{}                                            % Image path
+\imagepadding{}                                       % Image padding
+%% =================================
+
+
+\begin{document}
+  \begin{tikzpicture}
+    \node at (0, 0) {%
+      \fancyqr[
+        height=\theqrheight,
+        image=\theqrimage,
+        image padding=\theimagepadding,
+        left color=\theleftcolor, 
+        right color=\therightcolor,
+        gradient angle=\thegradientangle
+      ]{\theqrurl}
+    };
+  \end{tikzpicture}
+\end{document}
