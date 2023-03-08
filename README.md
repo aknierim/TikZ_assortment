@@ -17,7 +17,7 @@ but I thought I might as well share them.
 
 * `Heitler_Model` - A graphical representation of the Heitler model of the electromagnetic component of an extensive air shower (EAS).
 
-* `IACT` - A schematic of an extensive air shower in the atmosphere detected by a pair of Imaging Air Cherenkov Telescopes (IACT).
+* `IACT` - A schematic of an extensive air shower in the atmosphere detected by a pair of Imaging Atmospheric Cherenkov Telescopes (IACT).
 
 * `QRstandalone` - Generates a QR code. Mostly for fun, but also to play around with TeX interface3 syntax.
 
