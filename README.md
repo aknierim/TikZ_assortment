@@ -9,11 +9,25 @@ but I thought I might as well share them.
 
 * `Cherenkov_Radiation` - A graphical representation of the Cherenkov radiation emitted by a particle traveling faster than the speed of light in a medium.
 
+* `Dulong_Petit_dewar` - Graphic showing a dewar flask containing water shown at different times when inserting a hot metal.
+
+* `Feynman_diagrams` - Various Feynman diagrams.
+
+* `Fraunhofer_diffraction_graph` - A typical Fraunhofer diffraction graph made with `pgfplots`.
+
 * `Heitler_Model` - A graphical representation of the Heitler model of the electromagnetic component of an extensive air shower (EAS).
 
-* `Brillouin_Hexagons` - Hexagonal lattice and its first Brillouin zone.
+* `IACT` - A schematic of an airshower in the atmosphere detected by a pair of Imaging Air Cherenkov Telescopes (IACT).
+
+* `QRstandalone` - Generates a QR code. Mostly for fun, but also to play around with TeX interface3 syntax.
+
+* `SolidStatePhysics/Brillouin_Hexagons` - Hexagonal lattice and its first Brillouin zone.
 
 * `XKCD_Astronomer` - A sketch of an astronomer with a telescope, inspired by the XKCD comics.
+
+* `falling_sphere_viscometer` - Classic falling-sphere viscometer according to the Hoeppler principle.
+
+* `timer_circuit` - A timer circuit activated by a photodiode.
 
 ## Usage
 
