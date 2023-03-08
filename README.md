@@ -1,7 +1,8 @@
 # TikZ_assortment
 
 This is a collection of TikZ graphics I have made over the years. They are mostly for my own use,
-but I thought I might as well share them.
+but I thought I might as well share them. I might add more in the near future and this repository's 
+structure is still subject to change. For now, however, have fun looking around.
 
 ## Contents
 
