@@ -1,19 +1,9 @@
-#!/bin/bash
-pwd := $$(pwd)
-
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
-
+TeXInputs = TEXINPUTS=..:
 
 all: data_pipeline.pdf
 
-
 data_pipeline.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) data_pipeline.tex 1> build/log || cat build/log
-	mv build/data_pipeline.pdf $@
+	$(TeXInputs) latexmk -r ../latexmkrc data_pipeline.tex
 
 FORCE:
 

@@ -1,19 +1,10 @@
-#!/bin/bash
-pwd := $$(pwd)
+TeXInputs = TEXINPUTS=..:
 
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+all: build/timer_circuit.pdf
 
+build/timer_circuit.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../latexmkrc timer_circuit.tex
 
-all: timer_circuit.pdf
-
-
-timer_circuit.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) timer_circuit.tex 1> build/log || cat build/log
-	mv build/timer_circuit.pdf $@
 
 FORCE:
 

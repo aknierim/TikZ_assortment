@@ -1,19 +1,10 @@
-#!/bin/bash
-pwd := $$(pwd)
+TeXInputs = TEXINPUTS=..:
 
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+all: build/Heitler_model.pdf
 
+build/Heitler_model.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../latexmkrc Heitler_model.tex
 
-all: heitler_model.pdf
-
-
-heitler_model.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) heitler_model.tex 1> build/log || cat build/log
-	mv build/heitler_model.pdf $@
 
 FORCE:
 

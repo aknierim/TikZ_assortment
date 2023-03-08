@@ -1,19 +1,9 @@
-#!/bin/bash
-pwd := $$(pwd)
+TeXInputs = TEXINPUTS=..:
 
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+all: build/Fraunhofer_diffraction_graph.pdf
 
-
-all: Fraunhofer_diffraction_graph.pdf
-
-
-Fraunhofer_diffraction_graph.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) Fraunhofer_diffraction_graph.tex 1> build/log || cat build/log
-	mv build/Fraunhofer_diffraction_graph.pdf $@
+build/Fraunhofer_diffraction_graph.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../latexmkrc Fraunhofer_diffraction_graph.tex
 
 FORCE:
 

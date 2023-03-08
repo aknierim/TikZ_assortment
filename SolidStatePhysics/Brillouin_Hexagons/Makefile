@@ -1,24 +1,10 @@
-#!/bin/bash
-pwd := $$(pwd)
+TeXInputs = TEXINPUTS=../..:
 
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+all: build/hexagons.pdf
 
+build/hexagons.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../../latexmkrc hexagons.tex
 
-all: hexagons.pdf # hexagons_en.pdf
-
-
-hexagons.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) hexagons.tex 1> build/log || cat build/log
-	mv build/hexagons.pdf $@
-
-# for later use
-# hexagons_en.pdf: FORCE | build
-# 	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) hexagons.tex 1> build/log || cat build/log
-# 	mv build/hexagons.pdf $@
 
 FORCE:
 

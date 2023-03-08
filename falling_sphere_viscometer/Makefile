@@ -1,19 +1,9 @@
-#!/bin/bash
-pwd := $(PWD)
+TeXInputs = TEXINPUTS=..:
 
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+all: build/falling_sphere_viscometer.pdf
 
-
-all: falling_sphere_viscometer.pdf
-
-
-falling_sphere_viscometer.pdf: FORCE | build
-	@TEXINPUTS=$(pwd): latexmk $(TeXOptions) falling_sphere_viscometer.tex 1> build/log || cat build/log
-	mv build/falling_sphere_viscometer.pdf $@
+build/falling_sphere_viscometer.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../latexmkrc falling_sphere_viscometer.tex
 
 FORCE:
 

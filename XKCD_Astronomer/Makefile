@@ -1,19 +1,9 @@
-#!/bin/bash
-pwd := $$(pwd)
+TeXInputs = TEXINPUTS=..:
 
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+all: build/xkcd_astronomer_dark.pdf
 
-
-all: xkcd_astronomer.pdf
-
-
-xkcd_astronomer.pdf: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) xkcd_astronomer_dark.tex 1> build/log || cat build/log
-	mv build/xkcd_astronomer_dark.pdf $@
+build/xkcd_astronomer_dark.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../latexmkrc xkcd_astronomer_dark.tex
 
 FORCE:
 
