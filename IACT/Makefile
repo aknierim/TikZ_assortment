@@ -1,31 +1,37 @@
-#!/bin/bash
-pwd := $$(pwd)
+TeXInputs = TEXINPUTS=..:
 
-FILES = iact_dark.pdf iact_light.pdf iact_dark_de.pdf iact_light_de.pdf
-
-# LaTeX options to disable interruptions
-TeXOptions = -lualatex \
-			 -interaction=nonstopmode \
-			 -halt-on-error \
-			 -output-directory=build
+SVGFILES := iact_1.svg iact_2.svg iact_3.svg iact_4.svg iact_5.svg iact_6.svg
 
 
-all: $(FILES)
+define inksvg
+	inkscape \
+				--pdf-poppler \
+				--pdf-page=$(subst iact_,,$(basename $(1)))\
+				--export-type=svg \
+				--export-text-to-path \
+				--export-area-drawing \
+				--export-filename=build/$(1) \
+				build/iact.pdf
+endef
 
 
-$(FILES): FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) $(basename $@).tex 1> build/log || cat build/log
-	mv build/$@ $@
+all: build/iact.pdf $(SVGFILES)
+
+build/iact.pdf: FORCE | build
+	$(TeXInputs) latexmk -r ../latexmkrc iact.tex
 
 preview: FORCE | build
-	@TEXINPUTS=$$(pwd): latexmk $(TeXOptions) -pvc iact_dark.tex 
+	$(TeXInputs) latexmk -r ../latexmkrc -pvc iact.tex 
 
-FORCE:
+$(SVGFILES): build/iact.pdf
+	$(call inksvg,$@)
 
 build:
 	mkdir -p build/
 
 clean:
 	rm -rf build
+
+FORCE:
 
 .PHONY: FORCE all clean

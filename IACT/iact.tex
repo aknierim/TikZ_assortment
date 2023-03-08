@@ -1,0 +1,84 @@
+\documentclass[aspectratio=21, professionalfonts]{beamer}
+
+\mode<presentation>
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamersize{text margin left=0pt, text margin right=0pt}
+\mode<presentation>
+
+\usepackage{fontspec}
+\setsansfont{Akkurat Office}
+
+\usepackage{tikz}
+\usepackage[
+  % langGerman,
+  dark
+]{iacttikz}
+
+
+
+\begin{document}
+  \begin{frame}
+    \centering
+    \begin{tikzpicture}
+      \clip (-6,0) rectangle (13,9);
+      
+      \mountainrange
+      \lightpool
+      \cherenkovdiagram
+      \initgamma
+      \airshower
+      \heitlermodel
+      \telescopes
+      \cameraframe
+      \cherenkovdesc
+      \easdesc
+      \cameradesc
+    \end{tikzpicture}
+  \end{frame}
+
+  \begin{frame}
+    \centering
+    \begin{tikzpicture}
+      \clip (-6,0) rectangle (13,9);
+      
+      \uncover<1->{%
+      \mountainrange
+      }
+
+      \uncover<4->{%
+        \lightpool
+        \cherenkovdesc
+        \airshower
+      }
+      \only<4>{%
+        \cherenkovdiagram[-2.3, 6][5.7cm]
+      }
+
+      \uncover<2->{%
+        \initgamma
+      }
+      
+      \only<3>{
+        \airshower[bgcolor]
+      }
+      \uncover<3->{%
+        \easdesc
+      }
+      \only<3>{%
+        \heitlermodel[-2.3, 6][5.7cm]
+      }
+      
+      \uncover<1->{%
+        \telescopes
+      }
+      
+      \uncover<5->{%
+        \cameraframe[-3,3.5][4cm][4.5cm]
+        \cameradesc[2.1cm][above]
+      }
+    \end{tikzpicture}
+  \end{frame}
+
+\end{document}
