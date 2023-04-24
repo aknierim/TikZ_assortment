@@ -1,4 +1,4 @@
-# TikZ_assortment
+# TikZ Assortment
 
 This is a collection of TikZ graphics I have made over the years. They are mostly for my own use,
 but I thought I might as well share them. I might add more in the near future and this repository's 
