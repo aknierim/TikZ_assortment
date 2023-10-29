@@ -1,0 +1,59 @@
+\input{../../tikz-header.tex}
+
+\begin{document}
+  \begin{tikzpicture}[thick, >=latex, decoration={snake, post length=1.5mm}]
+    \draw (0,0) node[left] {GS} -- node[midway, below] {Helium} (2,0)
+      (0,4) node[left] {$2^3S_1$} -- (2,4)
+      (0,5) node[left] {$2^1S_0$} -- (2,5);
+    \draw (4,0) -- node[midway, below] {Neon} (6,0)
+      (4,1) -- (6,1)
+      (4,1.1) -- (6,1.1)
+      (4,1.2) node[left] {$3s$} -- (6,1.2)
+      (4,4) node[left] {$4s$} -- (6,4)
+      (4,5) node[left] {$5s$} -- (6,5);
+    \draw 
+      (6.5,2.5) -- (8.5,2.5) node[right] {$3p$}
+      (6.5,4.5) -- (8.5,4.5) node[right] {$4p$};
+
+    \draw [->] (0.5,0) -- node[midway, left, anchor=east, align=left] {Excitation\\by electron\\collision} (0.5,5);
+    \draw [->] (1.5,0) -- (1.5,4);
+    \draw [
+      ->,
+      decorate,
+    ] (2.1, 5) 
+      -- node[midway, above, align=center, yshift=1mm] {\ce{He}-\ce{Ne}\\collision}
+      (3.5,5);
+    \draw [
+      ->,
+      decorate,
+    ] (2.1, 4) -- (3.5,4);
+    \draw [
+      ->,
+      decorate,
+      red,
+    ] (5.5, 5)
+      -- node[midway, right, xshift=2mm] {$\qty{632.82}{\nano\metre}$}
+      (7.5,2.5);
+    \draw [
+      ->,
+      decorate,
+      red!80!black,
+    ] (5.5, 4)
+      -- node[midway, left, xshift=-2mm] {$\qty{1.15}{\micro\metre}$}
+      (6.7,2.5);
+    \draw [
+      ->,
+      decorate,
+      red!80!black,
+    ] (5.8, 5)
+      -- node[midway, above, xshift=4mm] {$\qty{3.39}{\micro\metre}$}
+      (7,4.5);
+    \draw [
+      ->,
+      decorate,
+    ] (7.1, 2.5)
+      -- node[midway, left, anchor=east, align=left, yshift=1mm] {Spontaneous\\emission}
+      (5.5,1.2);
+    \draw[->] (5,1) -- node[midway, right, anchor=west, align=left] {Diffusion\\to walls} (5,0); 
+  \end{tikzpicture}
+\end{document}
