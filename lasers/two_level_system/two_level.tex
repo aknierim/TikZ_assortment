@@ -1,0 +1,40 @@
+\input{../../tikz-header.tex}
+
+\begin{document}
+   \begin{tikzpicture}[thick, >=latex, decoration={snake, post length=1mm}]
+      \draw (0,0) node[left] {$E_1$} -- node[midway, below] {Absorption} (3,0) 
+        (4,0) -- node[midway, below, align=center] {Spontaneous\\emission} (7,0) 
+        (8,0) -- node[midway, below, align=center] {Stimulated\\emission}(11,0);
+      \draw (0,2) node[left] {$E_2$} -- (3,2) (4,2) -- (7,2) (8,2) -- (11,2);
+      \draw [->, >=latex] (1.5,0) -- +(0,2);
+      \draw [<-, >=latex] (5.5,0) -- +(0,2);
+      \draw [<-, >=latex] (9.5,0) -- +(0,2);
+
+      \draw [
+        ->,
+        decorate,
+        red,
+      ] (0,1) -- node[below] {$h\nu$} (1.5,1);
+      \draw [
+        ->,
+        decorate,
+        decoration={post length=1.5mm},
+        red,
+      ] (5.5,1) -- node[below] {$h\nu$} (7,1.5);
+      \draw [
+        ->,
+        decorate,
+        red,
+      ] (8,1) -- node[below] {$h\nu$} (9.5,1);
+      \draw [
+        ->,
+        decorate,
+        red,
+      ] (9.5,1.4) -- node[below] {$h\nu$} (11,1.4);
+      \draw [
+        ->,
+        decorate,
+        red,
+      ] (9.5,0.6) -- node[below] {$h\nu$} (11,0.6);
+  \end{tikzpicture}
+\end{document}
