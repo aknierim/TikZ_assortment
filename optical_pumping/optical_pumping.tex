@@ -1,0 +1,57 @@
+\input{../tikz-header.tex}
+
+\xdefinecolor{copper}{rgb}{0.72, 0.45, 0.2}
+\xdefinecolor{ruby}{rgb}{0.88, 0.07, 0.37}
+
+\begin{document}
+  \begin{tikzpicture}[thick, font=\scriptsize, scale=1.5]
+    % lense 1
+    \draw [rounded corners=1pt] (1.5,1.35) arc(45:-45:0.5cm) -- cycle;
+
+    % Interference filter
+    \draw (2,0.5) rectangle node[midway, below, align=center, yshift=-0.75cm] {Interference\\filter} +(0.15,1);
+
+    % Polarizer
+    \draw (2.5,0.5) rectangle +(0.10,1) node[midway, above, align=center, yshift=0.7cm] {Linear\\polarizer};
+
+    % lambda/4 plate
+    \draw (3,0.5) rectangle node[midway, below, align=center, yshift=-0.75cm, anchor=north] {$\lambda/4$\\plate} +(0.10,1);
+
+    % coils and absorption cell
+    \draw [fill=copper] (4,0) rectangle +(0.2,2);
+    \draw [fill=white!95!black] (4.5,0.75) rectangle (5.5,1.25);
+    \draw [color=copper, very thick] (5,1) circle (0.25cm);
+    \draw [fill=copper] (5.8,0) rectangle +(0.2,2);
+
+    % horizontal coils
+    \draw [fill=copper] (4.3,1.8) rectangle (5.7,1.6);
+    \draw [fill=copper] (4.3,0.2) rectangle (5.7,0.4);
+
+    \node (Coils) at (5,2.4) {Coils};
+    \draw [thin] (Coils.south) -- (4.2,2) (Coils.south) -- (5.8,2);
+
+    % lense 2
+    \draw [rounded corners=1pt, rotate around={180:(6.57,1)}] (6.5,1.35) arc(45:-45:0.5cm) -- cycle;
+
+    % photodiode
+    \draw [fill=black!60!white] (7.5,0.8) -- (7.5,1.2) 
+      -- ++(0.1,0) -- ++(0,0.3) -- ++(0.5,0) 
+      -- ++(0,-1.5) -- node[midway, below] {Photodiode} ++(-0.5,0) -- (7.6,0.8) -- cycle;
+
+    % light path
+    \draw [color=ruby] (0.5,1.15) -- (1.5,1.35) -- (6.5, 0.85) -- +(1,0);
+    \draw [color=ruby] (0.5,0.85) -- (1.5,0.65) -- (6.5, 1.15) -- +(1,0);
+
+    % further annotations
+    \node [align=center, outer sep=-0.1cm] (Cell) at (4.7,-0.4) {\ce{Rb} absorption\\cell};
+    \draw [thin] (Cell.north) -- (4.7,0.85);
+
+    % Rb lamp
+    \draw (0.75,0.75) -- (0.75,0.5) 
+      -- node[midway, align=center, yshift=-0.55cm] {\ce{Rb} discharge\\lamp}
+      (0,0.5) -- (0,1.5) -- (0.75,1.5) -- (0.75,1.25);
+    \fill (0.36,0.925) -- +(-0.2,0) -- +(-0.2,0.15) -- +(0,0.15);
+    \draw [fill=ruby] (0.5,1) circle (0.15cm);
+  \end{tikzpicture}
+\end{document}
+
