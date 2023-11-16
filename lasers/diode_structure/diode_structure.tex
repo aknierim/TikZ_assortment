@@ -1,0 +1,66 @@
+\input{../../tikz-header.tex}
+
+\xdefinecolor{qclyellow}{HTML}{ffc75f}
+\xdefinecolor{qclorange}{HTML}{ff9671}
+\xdefinecolor{qclred}{HTML}{ff6f91}
+\xdefinecolor{qclblue}{HTML}{2c73d2}
+\xdefinecolor{qcllightblue}{HTML}{538def}
+\xdefinecolor{qclgreen}{HTML}{008f7a}
+\xdefinecolor{qclviolet}{HTML}{845ec2}
+\xdefinecolor{qclviolet2}{HTML}{a178df}
+
+\begin{document}
+  \begin{tikzpicture}[
+      thick,
+      >=latex,
+      font=\footnotesize,
+    ]
+    \tikzset{layer node/.style={node distance=1.05\baselineskip, text width=5cm}}
+    % Gain guided
+    \draw (0,0) rectangle (4,4);
+    \draw [fill=qclyellow] (0,0) rectangle (4,0.25);
+    \draw [fill=qclviolet] (0,0.25) rectangle (4,2);
+    \draw [fill=qclgreen] (0,2) rectangle (4,2.25);
+    \draw [fill=qclred] (0,2.25) rectangle (4,2.5);
+    \draw [fill=qclgreen] (0,2.5) rectangle (4,2.75);
+    \draw [fill=qclviolet2] (0,2.75) rectangle (4,3.75);
+    \draw [fill=qclblue] (0,2.75) -- (4,2.75) -- (4,3.25) -- (2.75,3.25)
+      -- (2.25,2.75) -- (1.75,2.75) -- (1.25,3.25) -- (0,3.25) -- cycle;
+    \draw [fill=qclyellow] (0,3.75) rectangle (4,4);
+
+    % Index guided
+    \draw (10,0) rectangle (14,4);
+    \draw [fill=qclyellow] (10,0) rectangle (14,0.25);
+    \draw [fill=qclviolet] (10,0.25) rectangle (14,2);
+    \draw [fill=qclgreen] (10,2) rectangle (14,2.375);
+    \draw [fill=qclred] (10,2.375) rectangle (14,2.5);
+    \draw [fill=qclgreen] (10,2.5) -- (14,2.5) -- (14,2.625) -- (12.75,2.625)
+      -- (12.25,3.125) -- (11.75,3.125) -- (11.25, 2.625) -- (10,2.625) -- cycle;
+    \draw [fill=qclviolet2] (10,3.125) rectangle (14,3.75);
+    \draw [fill=qclblue] (10,2.625) -- (11.25,2.625) -- (11.75,3.125) -- (11.5,3.375)
+      -- (11.25,3.125) -- (10,3.125) -- cycle;
+    \draw [fill=qclblue] (14,2.625) -- (12.75,2.625) -- (12.25,3.125) -- (12.5,3.375)
+      -- (12.75,3.125) -- (14,3.125) -- cycle;
+    \draw [fill=qclyellow] (10,3.75) rectangle (14,4);
+
+    % Annotations
+    \node [layer node, fill=qclyellow, anchor=west] (electrode) at (4.35,3.85) {Electrode};
+    \node [layer node, fill=qclviolet2, anchor=west, below of=electrode] (CL1) {Contact Layer (p-\ce{GaAs})};
+    \node [layer node, fill=qclblue, anchor=west, below of=CL1] (BL) {Blocking Layer (n-\ce{GaAs})};
+    \node [layer node, fill=qclgreen, anchor=west, below of=BL] (Clad1) {Cladding Layer (p-\ce{In(GaAs)P})};
+    \node [layer node, fill=qclred, anchor=west, below of=Clad1] (active) {Active Layer (\ce{InGaAs})};
+    \node [layer node, fill=qclgreen, anchor=west, below of=active] (Clad2) {Cladding Layer (n-\ce{In(GaAs)P})};
+    \node [layer node, fill=qclviolet, anchor=west, below of=Clad2] (Subst) {Substrate (n-\ce{GaAs})};
+    \node [layer node, fill=qclyellow, anchor=west, below of=Subst] (electrode2) {Electrode};
+
+    \node [above] at (2,4) {Gain-Guided Laser};
+    \node [above] at (12,4) {Index-Guided Laser};
+
+    % lines
+    \draw (electrode2.south west) rectangle (electrode.north east);
+    \draw (4,0) -- (electrode2.south west);
+    \draw (4,4) -- (electrode.north west);
+    \draw (10,0) -- (electrode2.south east);
+    \draw (10,4) -- (electrode.north east);
+  \end{tikzpicture}
+\end{document}
