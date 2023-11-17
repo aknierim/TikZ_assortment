@@ -1,0 +1,29 @@
+\input{../../tikz-header.tex}
+
+\xdefinecolor{qclorange}{HTML}{ff9671}
+\xdefinecolor{qclblue}{HTML}{2c73d2}
+
+\begin{document}
+  \begin{tikzpicture}[thick, >=latex]
+    \draw [->] (-0.5,0) -- node[midway, above, rotate=90] {$\text{Energy} \mathbin{/} \unit{\eV}$} (-0.5,5);
+
+    % insulator
+    \fill [qclorange, opacity=0.5] (0,0) rectangle node[text=qclorange!50!black] {VB} (3,1.5);
+    \fill [qclblue, opacity=0.5] (0,3) rectangle node[text=qclblue!50!black] {CB} (3,4.5);
+    \node [above] at (1.5,4.5) {Insulators};
+
+    % semiconductor
+    \fill [qclorange, opacity=0.5] (4,0.5) rectangle node[text=qclorange!50!black] {VB} (7,2);
+    \fill [qclblue, opacity=0.5] (4,2.5) rectangle node[text=qclblue!50!black] {CB} (7,4);
+    \node [above] at (5.5,4.5) {Semiconductors};
+
+    % conductor
+    \fill [qclorange, opacity=0.5] (8,1) rectangle node[text=qclorange!50!black] {VB} (11,2.5);
+    \fill [qclblue, opacity=0.5] (8,2) rectangle node[text=qclblue!50!black] {CB} (11,3.5);
+    \node [above] at (9.5,4.5) {Conductors};
+
+    % fermi energy
+    \draw [dashed] (-0.5,2.25) -- (11.5,2.25);
+    \node [fill=white] at (1.5,2.25) {Fermi Energy};
+  \end{tikzpicture}
+\end{document}
