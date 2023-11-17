@@ -1,0 +1,32 @@
+\input{../../tikz-header.tex}
+
+\begin{document}
+  \begin{tikzpicture}[thick, >=latex]
+    \draw (0,0) node[left] {$E_1$} -- (4,0)
+      (0,4) node[left] {$E_4$} -- (4,4)
+      (2,3) node[left] {$E_3$} -- (4,3)
+      (2,1) node[left] {$E_2$} -- (4,1);
+    \draw [->, line width=1.5pt] (0.5,0) -- node[midway, left, align=left] {Pump\\transition} (0.5,4);
+    \draw [->] (2.5,4) -- node[midway, right, align=left] {fast, radiationless\\transition} (2.5,3);
+    \draw [->] (3,3) -- (3,1);
+    \draw [->] (2.5,1) -- node[midway, right, align=left] {fast, radiationless\\transition} (2.5,0);
+    \draw [
+      ->,
+      decorate,
+      decoration={snake, post length=1mm},
+      red,
+    ] (1.5,2) -- node[below] {$h\nu$} (3,2);
+    \draw [
+      ->,
+      decorate,
+      decoration={snake, post length=1mm},
+      red,
+    ] (3,2.5) -- node[below] {$h\nu$} (4.5,2.5);
+    \draw [
+      ->,
+      decorate,
+      decoration={snake, post length=1mm},
+      red,
+    ] (3,1.5) -- node[below] {$h\nu$} (4.5,1.5);
+  \end{tikzpicture}
+\end{document}
