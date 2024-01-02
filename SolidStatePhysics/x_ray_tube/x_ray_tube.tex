@@ -1,0 +1,33 @@
+\input{../../tikz-header.tex}
+
+\xdefinecolor{qclred}{HTML}{ff6f91}
+\xdefinecolor{qclblue}{HTML}{2c73d2}
+
+\begin{document}
+  \begin{tikzpicture}[>=latex]
+    \draw [qclred, thick] (-1,1.75) -- (2,1.75) decorate [decoration={coil,segment length=0.91mm}] {-- (2,1.25)} -- (-1,1.25);
+    \draw [tugreen!60!white, fill, thick, rounded corners=3pt] (8,1.25) -- (6,1.25) -- (6,1) -- (5,1) -- (4,2) -- (6,2) -- (6,1.75) -- (8,1.75);
+    \draw [tugreen, line width=4pt, xshift=2pt] (4.75,1.25) -- (4.25,1.75); 
+    \draw [->] (2.3,1.5) -- node[above, midway] {$\symup{e}^{-}$}(4.2,1.5);
+  
+    \foreach \ang in {250,260,270,280,290} {
+      \draw [
+        ->,
+        decorate,
+        decoration={snake, post length=1mm},
+        qclblue,
+        xshift=4.5cm,
+        yshift=1.5cm,
+      ] (0,0) -- (\ang:1.5) node[below] {\ifnum\ang=270 X-rays\fi} ;
+    }
+
+    \draw [thick, rounded corners=7pt] 
+      (4,0.5) -- (1,0.5) -- (1,1) -- (0,1) -- (0,2) -- (1,2) -- (1,2.5)
+      -- (6.5,2.5) -- (6.5,2) -- (7,2) -- (7,1) -- (6.5,1) -- (6.5,0.5) -- (5,0.5);
+
+    % Annotations
+    \draw [<-] (2,1.75) -- +(0,1.5) node[above] {Hot Cathode};
+    \draw [<-] (4.5,1.55) -- +(0,1.6) node[above] {Metal Target};
+    \draw [<-] (7.5,1.5) -- +(0,1.75) node[above] {Anode};
+  \end{tikzpicture}
+\end{document}
