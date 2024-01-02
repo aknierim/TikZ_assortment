@@ -1,0 +1,50 @@
+\input{../../tikz-header.tex}
+
+\xdefinecolor{qclyellow}{HTML}{ffc75f}
+\xdefinecolor{qclred}{HTML}{ff6f91}
+\xdefinecolor{qclblue}{HTML}{2c73d2}
+
+\begin{document}
+   \begin{tikzpicture}[
+       >=latex,
+       decoration={
+         markings,
+         mark=at position 0.6 with {\arrow{>}}
+       }
+     ]
+     \foreach \size [count=\i] in {5pt, 1cm, 1.5cm} {
+       \ifnum\i=1
+         \fill (0,0) circle (\size);
+         \fill (4,0) circle (\size);
+       \else
+         \draw (0,0) circle (\size);
+         \draw (4,0) circle (\size);
+       \fi
+     }
+
+     \node (1_e_in) at (-3,0.5) {$\symup{e}^{-}$};
+     \coordinate (1_e_k) at (-1,0);
+     \node (1_e_out) at (1.5,-2.5) {$\symup{e}^{-}$};
+     \node (1_e_gamma_out) at (0.5,2.5) {$\symup{e}^{-}_\gamma$};
+     \fill [white, xshift=4cm] (150:1.5cm) circle (0.25cm);
+     \node [inner sep=0, outer sep=0, xshift=4cm] (2_e_l) at (150:1.5cm) {$\symup{e}^{-}$};
+     \coordinate (2_e_k) at (3,0);
+
+     % 1
+     \draw [qclred, thick, postaction={decorate}] (1_e_in) -- (1_e_k);
+     \draw [qclred, thick, postaction={decorate}] (1_e_k) -- (1_e_out);
+     \fill [tugreen] (1_e_k) circle (1.25pt);
+     \draw [tugreen, thick, postaction={decorate}] (1_e_k) -- (1_e_gamma_out);
+
+     %2
+     \draw [
+      ->,
+      thick,
+      decorate,
+      decoration={snake, post length=1mm},
+      qclblue,
+     ] (2.89,0.25) -- (6,1) node[right] {$\gamma$};
+     \draw [qclyellow, thick, postaction={decorate}] (2_e_l) -- (2_e_k);
+     \fill [qclyellow] (2_e_k) circle (1.25pt);
+   \end{tikzpicture}
+\end{document}
