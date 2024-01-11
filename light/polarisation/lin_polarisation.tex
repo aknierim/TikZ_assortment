@@ -1,0 +1,28 @@
+\input{../../tikz-header.tex}
+
+\begin{document}
+  \begin{tikzpicture}[
+      x={(30:1cm)},
+      y={(-30:1cm)},
+      z={(90:1cm)},
+      >=latex,
+      axis/.style={thick,->},
+    ]
+    \coordinate (O) at (0,0,0);
+    \draw[axis] (O) -- +(8.5,0,0) node [right] {$x$};
+    \draw[axis] (O) -- +(0,2,0) node [right] {$y$};
+    \draw[axis] (O) -- +(0,0,2) node [right] {$z$};
+    \draw[thick, dashed] (O) -- +(-2,0,0);
+
+    \draw[
+      tugreen,
+      thick,
+      smooth,
+      variable=\x,
+      samples at={0,0.25,...,8}
+    ] plot (\x,0,{sin(2*\x r)});
+
+    \foreach \x in{0.25,0.5,...,8}
+        \draw[tugreen,->] (\x,0,0) -- (\x,0,{sin(2*\x r)});
+  \end{tikzpicture}
+\end{document}
