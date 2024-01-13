@@ -1,0 +1,247 @@
+\input{../../tikz-header.tex}
+
+\xdefinecolor{qclyellow}{HTML}{ffc75f}
+\xdefinecolor{qclred}{HTML}{ff6f91}
+\xdefinecolor{qclblue}{HTML}{2c73d2}
+
+
+\NewDocumentCommand\mirror {m O{0} o} {
+  \begin{scope}[rotate around={#2:([xshift=0.5cm]#1)}]
+    \coordinate (O) at (#1);
+    \coordinate (M) at ([yshift=0.15cm]O);
+    \draw (O) rectangle +(1,0.1);
+    \draw (M) rectangle
+      node [transform shape, font=\fontsize{0.15cm}{0.15cm}\selectfont] {Mirror}
+      +(1,0.2) coordinate (M2);
+    \draw ([xshift=-0.9cm]M2) rectangle +(0.1,0.1) coordinate (S1);
+    \draw ([xshift=-0.2cm]M2) rectangle +(0.1,0.1) coordinate (S2);
+    \draw ([xshift=0.1cm]S1) rectangle +(-0.3,0.1);
+    \draw ([xshift=0.1cm]S2) rectangle +(-0.3,0.1);
+    \draw ([xshift=0.1cm]M) arc(0:180:-0.05cm);
+    \draw ([xshift=0.8cm]M) arc(0:180:-0.05cm);
+    \draw [fill=gray] ([xshift=0.3cm]O) rectangle +(0.4,0.1);
+
+    \IfNoValueF{#3}{
+      \coordinate (#3) at ([xshift=0.5cm]#1);
+    }
+  \end{scope}
+}
+
+
+\NewDocumentCommand\mirrorSagnac {s m O{0} o o o} {
+  \begin{scope}[rotate around={#3:([xshift=0.75cm]#2)}]
+    \coordinate (O) at (#2);
+    \draw [fill=gray] (O) rectangle +(1.5,0.15);
+    \draw ([xshift=-0.15cm, yshift=0.2cm]O) coordinate (MO) rectangle +(1.8,0.5) coordinate (MM);
+    \IfBooleanTF{#1}{
+      \draw ([xshift=-0.825cm]MM) rectangle +(-0.15,0.15);
+      \draw ([xshift=-0.825cm, yshift=0.05cm]MM) -- ++(0.1,0)
+        -- ++(0,0.05) -- ++(0.05,0)  -- ++(0,0.15) -- ++(-0.45,0)
+        -- ++(0,-0.15) -- ++(0.05,0) -- ++(0,-0.05) -- ++(0.1,0);
+      \draw ([yshift=0.15cm]MO) -- ++(0.15,0) -- ++(0.05,-0.05)
+        -- ++(1.4,0) -- ++(0.05,0.05) -- ++(0.15,0);
+      \draw ([yshift=0.2cm]MO) -- ++(0.15,0) -- ++(0.05,0.05)
+        -- ++(1.4,0) -- ++(0.05,-0.05) -- ++(0.15,0);
+    }
+    {
+      \draw ([xshift=-0.15cm]MM) rectangle +(-0.15,0.15);
+      \draw ([xshift=-0.15cm, yshift=0.05cm]MM) -- ++(0.1,0)
+        -- ++(0,0.05) -- ++(0.05,0)  -- ++(0,0.15) -- ++(-0.45,0)
+        -- ++(0,-0.15) -- ++(0.05,0) -- ++(0,-0.05) -- ++(0.1,0);
+      \draw ([yshift=0.15cm]MO) ++(0.21,0.025) circle (2pt);
+      \draw ([yshift=0.15cm]MO) ++(0.38,0.025) circle (2pt);
+      \draw [fill=white] ([xshift=0.15cm, yshift=0.15cm]MO) -- ++(-0.15,0)
+        -- ++(0,0.05) -- ++(0.15,0);
+      \draw [fill=white] ([xshift=0.44cm, yshift=0.15cm]MO) -- ++(1.36,0)
+        -- ++(0,0.05) -- ++(-1.36,0);
+    }
+    \draw (MM) -- ++(0.1,-0.1) -- ++(0,-1.1) -- ++(-0.3,-0.3) coordinate (cornerR)
+      -- ++(-1.4,0) coordinate (cornerL) -- ++(-0.3,0.3) -- ++(0,1.1) -- ++(0.1,0.1);
+
+    \draw [thick] ([yshift=0.1cm]cornerL) coordinate (tempL) circle (1pt);
+    \draw [thick] ([yshift=0.1cm]cornerR) coordinate (tempR) circle (1pt);
+
+    \draw ([xshift=-0.15cm, yshift=0.4cm]tempL) circle (1pt);
+    \draw ([xshift=-0.15cm, yshift=0.4cm]tempL) circle (2pt);
+    \draw ([xshift=0.14cm, yshift=0.4cm]tempR) circle (1pt);
+    \draw ([xshift=0.14cm, yshift=0.4cm]tempR) circle (2pt);
+
+    \IfNoValueF{#4}{
+      \coordinate (#4) at ([xshift=0.75cm]O);
+    }
+    \IfNoValueF{#5}{
+      \coordinate (#5) at (tempL);
+    }
+    \IfNoValueF{#6}{
+      \coordinate (#6) at (tempR);
+    }
+  \end{scope}
+}
+
+
+\NewDocumentCommand\pbsc {m O{0} o o o o}{
+  \tikzset{octagon/.style={
+      shape=regular polygon,
+      regular polygon sides=8,
+      draw,
+      minimum width=2.15cm
+    }
+  }
+  \tikzset{pbsc/.style={
+      shape=regular polygon,
+      regular polygon sides=4,
+      draw,
+      minimum width=0.75cm
+    }
+  }
+
+  \begin{scope}[rotate around={#2:(#1)}]
+    \coordinate (O) at (#1);
+    \coordinate (PBSC) at ([xshift=-0.4cm, yshift=-0.4cm]O);
+    \node[octagon] at (O) {};
+    \draw ([xshift=-0.75cm, yshift=-0.25cm]O) rectangle +(1.5,0.5);
+    \draw [dashed] ([xshift=-1cm]O) -- +(2,0);
+    \draw [thick] ([xshift=-0.36cm]O) -- +(0.72,0);
+    \node [pbsc, rotate=45+#2] at (O) {};
+
+    \draw [thick] (O) +(45:0.9) coordinate (circ1) circle (1pt);
+    \draw [thick] (O) +(135:0.9) coordinate (circ2) circle (1pt);
+    \draw [thick] (O) +(-135:0.9) coordinate (circ3) circle (1pt);
+    \draw [thick] (O) +(-45:0.9) coordinate (circ4) circle (1pt);
+
+    \draw (O) +(90:0.85) circle (1pt);
+    \draw (O) +(90:0.85) circle (2pt);
+    \draw (O) +(-90:0.85) circle (1pt);
+    \draw (O) +(-90:0.85) circle (2pt);
+
+    \IfNoValueF{#3}{
+      \coordinate (#3) at (circ1);
+    }
+    \IfNoValueF{#4}{
+      \coordinate (#4) at (circ2);
+    }
+    \IfNoValueF{#5}{
+      \coordinate (#5) at (circ3);
+    }
+    \IfNoValueF{#6}{
+      \coordinate (#6) at (circ4);
+    }
+\end{scope}
+}
+
+\NewDocumentCommand \glassPlates {m O{0}} {
+  \tikzset{square/.style={
+      shape=regular polygon,
+      regular polygon sides=4,
+      draw,
+      minimum width=8pt
+    }
+  }
+
+  \begin{scope}[rotate around={#2:(#1)}]
+    \coordinate (O) at (#1);
+
+    \draw (O) circle (4pt);
+    \node [square] (square) at (O) {};
+    \draw [qclblue!70!white, thick] ([yshift=0.5pt]O) +(200:4pt) -- ([yshift=0.5pt]O);
+    \draw [qclblue!70!white, thick] ([yshift=0.5pt]O) +(-20:4pt) -- ([yshift=0.5pt]O);
+    \draw [line join=bevel]([xshift=-0.1pt]O) +(200:4pt) rectangle +(4pt,1pt);
+    \draw [
+      rounded corners=1.4pt
+    ] ([yshift=0.2pt]square.south west) -- ++(-1,0) -- ++(0,0.1) -- ++ (1,0); 
+  \end{scope}
+}
+
+
+
+\begin{document}
+  \begin{tikzpicture}[
+      beam/.style={->, >=latex, thick, color=qclred, line join=bevel},
+      point/.style={font=\fontsize{0.18cm}{0.1cm}\selectfont, inner sep=1.7pt}
+    ]
+    \draw (2,4.8) rectangle
+      node [font=\fontsize{0.35cm}{0.35cm}\selectfont] {\ce{HeNe} Laser}
+      +(2,0.4);
+
+    \mirror{-1,5}[45][M1]
+    \mirror{-1,0}[135][M2]
+
+    \mirrorSagnac{6,0}[-135][Ma][P4][P3]
+    \mirrorSagnac{6,3}[-45][Mb][P6][P5]
+    \mirrorSagnac*{2,3}[45][Mc][P8][P7]
+    \pbsc{2.75,0}[45][P9][P1][P10][P2]
+
+    \glassPlates{2.75,1.45}
+
+    \draw [fill=darkgray]
+      (0.5,-0.35) rectangle +(0.1,0.7)
+      node [above, align=center, font=\tiny] {Polarisation\\Filter};
+
+    \draw [fill=darkgray] (4.2,-0.15) rectangle coordinate (GC) +(1,0.3);
+
+    \draw [beam] (2,5) -- (M1) -- (M2)
+      -- (Ma) -- (Mb) -- (Mc)
+      -- ([yshift=-4.5cm]Mc) node [below] {\small Output Beam to Photodiodes};
+
+    \node [above, point] at (P1) {1};
+    \node [above, point] at (P2) {2};
+    \node [below, point] at (P3) {3};
+    \node [right, point] at (P4) {4};
+    \node [right, point] at (P5) {5};
+    \node [above, point] at (P6) {6};
+    \node [above, point] at (P7) {7};
+    \node [left, point] at (P8) {8};
+    \node [left, point] at (P9) {9};
+
+    \draw [beam] (M2) -- ([xshift=-0.5cm]P1);
+    \draw [beam, <->] ([xshift=0.75cm]P2) -- ([xshift=-0.75cm]P3);
+    \draw [beam, <->] ([yshift=0.25cm]P4) -- ([yshift=-0.25cm]P5);
+    \draw [beam, <->] ([xshift=-0.7cm]P6) -- ([xshift=0.7cm]P7);
+    \draw [beam, <->] ([yshift=-0.15cm]P8) -- ([yshift=0.15cm]P9);
+
+    \draw[
+      thick,
+      postaction={
+        draw,
+        qclyellow,
+        dash pattern=on 3pt off 5pt,
+        dash phase=4pt
+      },
+      tugreen,
+      dash pattern=on 3pt off 5pt,
+      rounded corners=2pt,
+    ] (1.4,1.15) rectangle +(1.7,0.6);
+
+    \draw [
+      thick,
+      tugreen,
+      dash pattern=on 3pt off 1pt,
+      rounded corners=2pt,
+    ] (4.05,-0.25) rectangle +(1.3,0.5);
+
+    % Further annotations
+    \node [above] at ([yshift=0.2cm]GC) {\tiny Gas Cell};
+    \node [right] at (3.1,1.45) {\tiny Double Glass Holder};
+    \node [below] at ([xshift=-0.6cm, yshift=-0.3cm]M1) {\tiny $\text{M}_1$};
+    \node [above] at ([xshift=-0.6cm, yshift=0.3cm]M2) {\tiny $\text{M}_2$};
+    \node [below] at ([xshift=-0.2cm, yshift=-0.7cm]P3) {\tiny Mirror $\text{M}_\text{A}$};
+    \node [above] at ([xshift=-0.2cm, yshift=0.7cm]P6) {\tiny Mirror $\text{M}_\text{B}$};
+    \node [above] at ([xshift=0.2cm, yshift=0.7cm]P7) {\tiny Mirror $\text{M}_\text{C}$};
+    \node [below] at ([xshift=-0.4cm, yshift=-0.6cm]P1) {\tiny Beamsplitter};
+
+    \draw [
+      qclyellow,
+      thick,
+      dash pattern=on 3pt off 1pt,
+      rounded corners=1pt,
+    ] (4.5,5.2) rectangle +(0.5,0.1)
+      node [xshift=0.2cm, right, midway, black, font=\tiny] {Refractive Index Measurement for Glass};
+    \draw [
+      tugreen,
+      thick,
+      dash pattern=on 3pt off 1pt,
+      rounded corners=1pt,
+    ] (4.5,4.7) rectangle +(0.5,0.1)
+      node [xshift=0.2cm, right, midway, black, font=\tiny] {Refractive Index Measurement for Air};
+  \end{tikzpicture}
+ \end{document}
