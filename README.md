@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/554903713.svg)](https://zenodo.org/doi/10.5281/zenodo.11045573)
+
 # TikZ Assortment
 
 This is a collection of TikZ graphics I have made over the years. They are mostly for my own use,
@@ -37,3 +39,19 @@ Either compile all the files at once by calling
 make
 ```
 in the root directory of this repository, or compile each graphic individually by calling `make` inside the respective directory (you can also call `make -C <DIR>` from the root directory).
+
+## Citing This Repository
+If you want to use any of these graphics in one of your works, please refer to the Zenodo DOI above or cite as follows:
+```
+@software{knierim_tikz_assortment,
+  author       = {Anno Knierim},
+  title        = {{aknierim/TikZ\_assortment: Assortment of TikZ 
+                   graphics/source code.}},
+  month        = apr,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v1.0},
+  doi          = {10.5281/zenodo.11045574},
+  url          = {https://doi.org/10.5281/zenodo.11045574}
+}
+```
