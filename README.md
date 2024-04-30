@@ -50,7 +50,7 @@ If you want to use any of these graphics in one of your works, please refer to t
   month        = apr,
   year         = 2024,
   publisher    = {Zenodo},
-  version      = {v1.0},
+  version      = {v1.1},
   doi          = {10.5281/zenodo.11045574},
   url          = {https://doi.org/10.5281/zenodo.11045574}
 }
