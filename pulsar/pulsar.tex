@@ -1,0 +1,170 @@
+\input{../tikz-header.tex}
+
+\setmainfont{Fira Sans}
+
+\xdefinecolor{jetcolor}{HTML}{ebc934}
+\xdefinecolor{magnaxis}{HTML}{eb4634}
+\xdefinecolor{neutronblue}{HTML}{3486eb}
+
+
+%% Modified from the dipolar magnetic field drawing ---
+%% by Cyril Langlois
+\newcommand{\fieldline}[2]{%
+  {(pow(#1, 2)) * (3 * cos(#2) + cos(3 * #2))},
+  {2 * (pow(#1, 2)) * (sin(#2) + sin(3 * #2))}%
+}
+\NewDocumentCommand\pgfmathsinandcos {m m m}{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\NewDocumentCommand\LongitudePlane {m m m} {%
+  \pgfmathsinandcos\sinel\cosel{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3}   % azimuth
+  \tikzset{%
+    #1/.estyle={%
+      cm={\cost, \sint*\sinel, 0, \cosel, (0, 0)}%
+    }
+  }
+}
+%% ---------------------------------------------------
+
+
+\begin{document}
+  \begin{tikzpicture}[
+      >=latex
+    ]
+    \newdimen\R  % Radius
+    \R=0.5cm
+
+    \def\angEl{30}  % elevation angle
+
+    %% coordinates ------------------------------------
+    \coordinate (O) at (0,0);
+
+    % Northern jet
+    \coordinate (jet_N1) at (60:\R + 0.25cm);
+    \coordinate (jet_N2) at (70:\R + 0.25cm);
+    \coordinate (jet_N3) at (60:\R + 3cm);
+    \coordinate (jet_N4) at (70:\R + 3cm);
+    \coordinate (jet_eN1) at (65:\R + 0.25cm);
+    \coordinate (jet_eN2) at (65:\R + 3cm);
+
+    % Northern jet
+    \coordinate (jet_S1) at (240:\R + 0.25cm);
+    \coordinate (jet_S2) at (250:\R + 0.25cm);
+    \coordinate (jet_S3) at (240:\R + 3cm);
+    \coordinate (jet_S4) at (250:\R + 3cm);
+    \coordinate (jet_eS1) at (245:\R + 0.25cm);
+    \coordinate (jet_eS2) at (245:\R + 3cm);
+
+    % Anchor points
+    \coordinate (N) at (0, 3.8);
+    \coordinate (S) at (0, -3.8);
+    \coordinate (NE) at (1.7, 3.8);
+    \coordinate (NW) at (-1.7, 3.8);
+    \coordinate (SE) at (1.7, -3.8);
+    \coordinate (SW) at (-1.7, -3.8);
+    %% ------------------------------------------------
+
+
+    %% Light cylinder
+    \draw (S) ellipse (1.7cm and 0.3cm);
+    \draw (N) ellipse (1.7cm and 0.3cm);
+    \draw [dashed, opacity=0.7] (NE) -- (SE);
+    \draw [dashed, opacity=0.7] (NW) -- (SW);
+
+
+    %% Field lines -----------------------------------
+    %% Adapted from Cyril Langlois' drawing
+    \begin{scope}[
+      rotate around={-25:(O)},
+      field line/.style={
+        color=gray,
+        smooth,
+        opacity=0.7,
+        variable=\t, samples at={0,-5,-10,...,-360}
+      }
+    ]
+      \clip [rotate around={25:(O)}] (-2.5,-4.5) rectangle (2.5,4.5);
+
+      \LongitudePlane{{{0}zplane}}{\angEl}{0}
+      \foreach \r in {0.45,0.55,0.65,1,1.2,1.7} {
+        \draw[{{0}zplane}, field line] plot (\fieldline{\r}{\t});
+      }
+    \end{scope}
+    %% ------------------------------------------------
+
+
+    %% Magnetic axis
+    \draw [color=magnaxis] (O) -- (jet_eN1);
+
+
+    %% Northern jet -----------------------------------
+    \draw [jetcolor] (jet_N1) -- (jet_N3);
+    \draw [jetcolor] (jet_N2) -- (jet_N4);
+    \fill [
+      jetcolor,
+      rotate around={-25:(jet_eN1)},
+    ] (jet_eN1) ellipse (0.073cm and 0.025cm);
+
+    % Magnetic axis
+    \draw [color=magnaxis] (jet_eN1) -- (jet_eN2);
+
+    \fill [
+      jetcolor,
+      rotate around={-25:(jet_eN2)},
+    ] (jet_eN2) ellipse (0.314cm and 0.1cm);
+
+    % Magnetic axis
+    \draw [color=magnaxis] (jet_eN2) -- (65:\R + 4cm);
+    %% ------------------------------------------------
+
+
+    %% Southern jet ----------------------------------
+    \draw [jetcolor] (jet_S1) -- (jet_S3);
+    \draw [jetcolor] (jet_S2) -- (jet_S4);
+
+    % Magnetic axis
+    \draw [color=magnaxis] (jet_eS2) -- (245:\R + 4cm);
+    \fill [
+      jetcolor,
+      rotate around={-25:(jet_eS2)},
+    ] (jet_eS2) ellipse (0.314cm and 0.1cm);
+
+    % Magnetic axis
+    \draw [color=magnaxis] (jet_eS1) -- (jet_eS2);
+    \fill [
+      jetcolor,
+      rotate around={-25:(jet_eS1)},
+    ] (jet_eS1) ellipse (0.073cm and 0.025cm);
+
+    \draw [color=magnaxis] (O) -- (jet_eS1);
+    %% ------------------------------------------------
+
+
+    \draw [neutronblue!70!black,->] (-0.75, 3) arc [
+      start angle=-180,
+      end angle=300,
+      x radius=0.75cm,
+      y radius=0.1cm
+    ];
+
+    %% Rotation axis
+    \draw [neutronblue!70!black] (S) -- (N);
+
+    %% Neutron star
+    \fill [neutronblue] (O) circle (\R) coordinate (O);
+
+    %% Annotations
+    \node [
+      white,
+      align=center,
+      font=\tiny
+    ] at (O) {Neutron\\star};
+    \node [
+      neutronblue!70!black,
+      anchor=east,
+      font=\tiny
+    ] at (-0.2,2.8) {Rotation axis};
+  \end{tikzpicture}
+\end{document}
